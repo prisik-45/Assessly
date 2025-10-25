@@ -32,6 +32,9 @@ def extract_text_from_docx(file_path: str) -> str:
 @app.post("/upload-n-generate/")
 async def generate_quiz(file: UploadFile = File(..., description="Upload PDF or DOCX file"), request: dict = Depends(quiz_request)):
     
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="No filename provided.")
+    
     if not (file.filename.endswith('.pdf') or file.filename.endswith('.docx')):
         raise HTTPException(status_code=400, detail="Invalid file type. Please upload a PDF or DOCX file.")
     
@@ -48,7 +51,7 @@ async def generate_quiz(file: UploadFile = File(..., description="Upload PDF or 
         if not text.strip():
             raise HTTPException(status_code=400, detail="No text extracted from file")
         
-        response = await generate_quiz_from_pdf(text, request["num_questions"], request["difficulty"])
+        response = generate_quiz_from_pdf(text, request["num_questions"], request["difficulty"])
         return response
     
     except Exception as e:
@@ -57,14 +60,6 @@ async def generate_quiz(file: UploadFile = File(..., description="Upload PDF or 
     finally:
         if os.path.exists(temp_path):
             os.remove(temp_path)
-
-@app.get("/health")
-def health_check():
-    return {"status": "healthy"}
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
 
 @app.get("/health")
 def health_check():

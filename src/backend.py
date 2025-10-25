@@ -16,7 +16,7 @@ def preprocess_text(text: str) -> str:
     text = text.strip()
     return text
 
-async def generate_quiz_from_pdf(text: str, num_questions: int = 10, difficulty: str = "medium"):
+def generate_quiz_from_pdf(text: str, num_questions: int = 10, difficulty: str = "medium"):
     
     cleaned_text = preprocess_text(text)
     
@@ -53,6 +53,9 @@ Requirements:
         )
         
         quiz_text = completion.choices[0].message.content
+        
+        if not quiz_text:
+            return {"error": "No response from AI model"}
         
         quiz_text = quiz_text.strip()
         if quiz_text.startswith("```json"):
