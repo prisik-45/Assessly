@@ -49,13 +49,6 @@ Assessly is an AI-powered assessment generation platform that transforms PDF and
 
 ### Running the Application
 
-**Option 1: Single Command (Recommended)**
-```bash
-python run.py
-```
-
-**Option 2: Manual Startup**
-```bash
 # Terminal 1 - Start Backend
 python -m uvicorn src.api:app --host 127.0.0.1 --port 8000
 
@@ -78,7 +71,6 @@ Assessly/
 │   ├── api.py          # FastAPI backend server
 │   ├── backend.py      # Quiz generation logic
 │   └── frontend.py     # Streamlit UI
-├── run.py              # Single-command launcher
 ├── requirements.txt    # Python dependencies
 ├── pyproject.toml      # Project configuration
 └── README.md           # You are here!
@@ -197,7 +189,7 @@ This project is open source and available under the MIT License.
 
 ## 👨‍💻 Author
 
-Built with ❤️ by Abhishek
+Built by APK gang
 
 ---
 
@@ -221,7 +213,6 @@ Built with ❤️ by Abhishek
 ## 🚧 Future Enhancements
 
 - [ ] Support for more file formats (TXT, MD, etc.)
-- [ ] Question type variety (True/False, Fill-in-the-blank)
 - [ ] Quiz history and analytics
 - [ ] Export quiz results to PDF
 - [ ] Multi-language support

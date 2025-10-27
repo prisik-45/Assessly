@@ -61,8 +61,8 @@ def generate_quiz(uploaded_file, num_questions, difficulty_level):
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
 
-st.sidebar.title("Assessment Setup")
-st.sidebar.markdown("Upload a **PDF or DOCX** document to start.")
+st.sidebar.title("Assessly.ai")
+
 
 uploaded_file = st.sidebar.file_uploader(
     "Upload Document (PDF or DOCX)",
