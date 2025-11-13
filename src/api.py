@@ -4,7 +4,7 @@ import os
 from pdfminer.high_level import extract_text
 from docx import Document
 from fastapi.middleware.cors import CORSMiddleware
-from src.backend import generate_quiz_from_pdf
+from backend import generate_quiz_from_pdf
 
 app = FastAPI()
 
