@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "buildCommand": "uv pip install -r requirements.txt --target .python_packages && echo 'build complete'",
-  "outputDirectory": ".",
-  "routes": [
-    { "src": "/(.*)", "dest": "main.py" }
-  ]
-}
