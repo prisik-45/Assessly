@@ -3,7 +3,7 @@ import re
 import json
 from openai import OpenAI
 
-OPENROUTER_API_KEY = os.getenv("CHATBOT_API_KEY")
+OPENROUTER_API_KEY = os.getenv("ASSESSLY_API_KEY")
 
 client = OpenAI(
     api_key=OPENROUTER_API_KEY,
@@ -22,6 +22,8 @@ def generate_quiz_from_pdf(text: str, num_questions: int = 10, difficulty: str =
     
     model_name = "openai/gpt-oss-20b:free"
     
+    marks_instruction = "Assign exactly 1 mark to each question."
+
     prompt = f"""Create exactly {num_questions} multiple-choice questions with {difficulty} difficulty from the following text.
 
 Text:
@@ -32,13 +34,15 @@ Return ONLY a valid JSON array with this exact structure:
   {{
     "question": "Question text here?",
     "options": ["Option A", "Option B", "Option C", "Option D"],
-    "correct_answer": "Option A"
+    "correct_answer": "Option A",
+    "marks": 1
   }}
 ]
 
 Requirements:
 - Each question must have exactly 4 options
 - The correct_answer must be one of the options exactly as written
+- {marks_instruction}
 - Return only the JSON array, no additional text
 - Ensure proper JSON formatting"""
     

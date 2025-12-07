@@ -1,0 +1,24 @@
+# Gitignore for Assessly
+google-credentials.json
+*.json
+!package.json
+!tsconfig.json
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+temp_*

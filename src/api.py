@@ -1,10 +1,10 @@
-from fastapi import FastAPI, HTTPException, UploadFile, File, Depends, Form
+from fastapi import FastAPI, HTTPException, UploadFile, File, Depends, Form, Body
 import shutil
 import os
 from pdfminer.high_level import extract_text
 from docx import Document
 from fastapi.middleware.cors import CORSMiddleware
-from backend import generate_quiz_from_pdf
+from src.backend import generate_quiz_from_pdf
 
 app = FastAPI()
 
