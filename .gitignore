@@ -22,3 +22,10 @@ dist/
 *~
 .DS_Store
 temp_*
+venv/
+.env
+__pycache__/
+*.pdf
+*.docx
+*.DS_Store
+node_modules/
