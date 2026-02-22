@@ -189,7 +189,10 @@ This project is open source and available under the MIT License.
 
 ## 👨‍💻 Author
 
-Built by APK gang
+Built by :
+Prince Sikotra
+Abhishek Mitra
+Kush Kundariya
 
 ---
 
