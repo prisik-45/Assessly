@@ -220,5 +220,3 @@ Built by APK gang
 - [ ] Database integration for quiz storage
 
 ---
-
-**Made with 🧠 AI + 💻 Code**
